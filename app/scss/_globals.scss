@@ -1,0 +1,84 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-size: $font-sm;
+    font-weight: 300;
+    color: $grayishblue;
+    line-height: 1.3;
+
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: $grayishblue;
+}
+
+//spacing
+.container{
+    padding-top: 2.25rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.25rem;
+    padding-left: 1.5rem;
+    
+}
+
+//flexbox 
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// buttons
+button, .buton {
+    display: inline-block;
+    padding: 0.875rem 2.1875rem;
+    border-radius: 50px;
+    font-weight: 500;
+    color: $white;
+    border: 0;
+    cursor: pointer;
+    background: linear-gradient(45deg, $limegreen, $brightcyan);
+    transition: opacity 0.3s ease-in-out;
+}
+
+button:hover, .buton:hover {
+    opacity: 0.75;
+}
+
+// visibility
+.hide-for-mobile {
+    @include breackpoint-down(medium){
+        display: none;
+    }
+}
+.hide-for-desktop {
+    @include breackpoint-up(large){
+        display: none;
+    }
+}
