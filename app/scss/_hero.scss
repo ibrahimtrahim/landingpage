@@ -1,6 +1,7 @@
 .hero {
     @include breackpoint-up(large){
         display: flex;
+        align-items: center;
     }
 
     &__image{
@@ -23,13 +24,20 @@
         }
 
         @include breackpoint-up(large){
-            flex: 1;
+            background-image: url(/images/bg-intro-desktop.svg);
+            flex: 3;
             order: 2;
+            height: 41rem;
+            background-position: left center;
         }
     }
     &__text{
 
         text-align: center;
+        @include breackpoint-up(large){
+            flex: 2;
+            order: 1;
+        }
 
         h1{
             font-weight: 300;
@@ -43,10 +51,6 @@
             line-height: 1.5;
             margin-bottom: 2.25rem;
 
-        }
-        @include breackpoint-up(large){
-            flex: 1;
-            order: 1;
         }
 
     }
