@@ -1,7 +1,10 @@
 .hero {
-    @include breackpoint-up(large){
-        display: flex;
-        align-items: center;
+    background-color: $verylightgray;
+    .container{
+        @include breackpoint-up(large){
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__image{
@@ -15,28 +18,56 @@
         &::before{
             content: "";
             position: absolute;
+            background-image: url(/images/bg-intro-desktop.svg);
+            width: 100%;
+            height: 100%;
+            background-size: 93%;
+            background-repeat: no-repeat;
+            background-position: center bottom;
+            
+            @include breackpoint-up(large){
+                width: 150%;
+                background-size: 122%;
+                background-position: 0% 83%;
+            }
+        }    
+        &::after{
+            content: "";
+            position: absolute;
             background-image: url(/images/image-mockups.png);
             width: 100%;
             height: 100%;
             background-size: 93%;
             background-repeat: no-repeat;
             background-position: center bottom;
+
+            @include breackpoint-up(large){
+                width: 120%;
+                height: 122%;
+                background-size: 94%;
+                background-position: center 150%;
+                left: 22%;
+            }
         }
 
         @include breackpoint-up(large){
-            background-image: url(/images/bg-intro-desktop.svg);
+           // background-image: url(/images/bg-intro-desktop.svg);
             flex: 3;
             order: 2;
             height: 41rem;
-            background-position: left center;
+            background-image: none;
+            // background-position: left center;
         }
     }
     &__text{
 
         text-align: center;
+
         @include breackpoint-up(large){
             flex: 2;
             order: 1;
+            text-align: left;
+
         }
 
         h1{
@@ -45,6 +76,10 @@
             color: $darkBlue;
             line-height: 1.15;
             margin-bottom: 1.5rem;
+            @include breackpoint-up(large){
+                font-size: $font-xlg;
+    
+            }
             
         }
         p{

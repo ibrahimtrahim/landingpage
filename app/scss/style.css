@@ -93,6 +93,12 @@ body {
   line-height: 1.3;
 }
 
+@media (min-width: 64em) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
 body.noscroll {
   overflow: hidden;
 }
@@ -301,8 +307,12 @@ button:hover, .buton:hover {
   width: 100%;
 }
 
+.hero {
+  background-color: #fafafa;
+}
+
 @media (min-width: 64em) {
-  .hero {
+  .hero .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -324,6 +334,25 @@ button:hover, .buton:hover {
 .hero__image::before {
   content: "";
   position: absolute;
+  background-image: url(/images/bg-intro-desktop.svg);
+  width: 100%;
+  height: 100%;
+  background-size: 93%;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@media (min-width: 64em) {
+  .hero__image::before {
+    width: 150%;
+    background-size: 122%;
+    background-position: 0% 83%;
+  }
+}
+
+.hero__image::after {
+  content: "";
+  position: absolute;
   background-image: url(/images/image-mockups.png);
   width: 100%;
   height: 100%;
@@ -333,8 +362,17 @@ button:hover, .buton:hover {
 }
 
 @media (min-width: 64em) {
+  .hero__image::after {
+    width: 120%;
+    height: 122%;
+    background-size: 94%;
+    background-position: center 150%;
+    left: 22%;
+  }
+}
+
+@media (min-width: 64em) {
   .hero__image {
-    background-image: url(/images/bg-intro-desktop.svg);
     -webkit-box-flex: 3;
         -ms-flex: 3;
             flex: 3;
@@ -342,25 +380,12 @@ button:hover, .buton:hover {
         -ms-flex-order: 2;
             order: 2;
     height: 41rem;
-    background-position: left center;
+    background-image: none;
   }
 }
 
 .hero__text {
   text-align: center;
-}
-
-.hero__text h1 {
-  font-weight: 300;
-  font-size: 2.31rem;
-  color: #2d314d;
-  line-height: 1.15;
-  margin-bottom: 1.5rem;
-}
-
-.hero__text p {
-  line-height: 1.5;
-  margin-bottom: 2.25rem;
 }
 
 @media (min-width: 64em) {
@@ -371,6 +396,26 @@ button:hover, .buton:hover {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+    text-align: left;
   }
+}
+
+.hero__text h1 {
+  font-weight: 300;
+  font-size: 2.31rem;
+  color: #2d314d;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .hero__text h1 {
+    font-size: 3.25rem;
+  }
+}
+
+.hero__text p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
 }
 /*# sourceMappingURL=style.css.map */
