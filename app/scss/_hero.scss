@@ -15,17 +15,20 @@
         background-position: center center;
         min-height: 17.5rem;
 
+        @include breackpoint-up(medium){
+            min-height: 25rem;
+            background-position: center 60%;
+        }
+
         &::before{
-            content: "";
-            position: absolute;
-            background-image: url(/images/bg-intro-desktop.svg);
-            width: 100%;
-            height: 100%;
-            background-size: 93%;
-            background-repeat: no-repeat;
-            background-position: center bottom;
             
             @include breackpoint-up(large){
+                content: "";
+                position: absolute;
+                background-image: url(/images/bg-intro-desktop.svg);
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: center bottom;
                 width: 150%;
                 background-size: 122%;
                 background-position: 0% 83%;
@@ -40,6 +43,10 @@
             background-size: 93%;
             background-repeat: no-repeat;
             background-position: center bottom;
+
+            @include breackpoint-up(medium){
+                background-size: 52%;
+            }
 
             @include breackpoint-up(large){
                 width: 120%;

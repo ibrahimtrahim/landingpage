@@ -331,19 +331,21 @@ button:hover, .buton:hover {
   min-height: 17.5rem;
 }
 
-.hero__image::before {
-  content: "";
-  position: absolute;
-  background-image: url(/images/bg-intro-desktop.svg);
-  width: 100%;
-  height: 100%;
-  background-size: 93%;
-  background-repeat: no-repeat;
-  background-position: center bottom;
+@media (min-width: null) {
+  .hero__image {
+    min-height: 25rem;
+    background-position: center 60%;
+  }
 }
 
 @media (min-width: 64em) {
   .hero__image::before {
+    content: "";
+    position: absolute;
+    background-image: url(/images/bg-intro-desktop.svg);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
     width: 150%;
     background-size: 122%;
     background-position: 0% 83%;
@@ -359,6 +361,12 @@ button:hover, .buton:hover {
   background-size: 93%;
   background-repeat: no-repeat;
   background-position: center bottom;
+}
+
+@media (min-width: null) {
+  .hero__image::after {
+    background-size: 52%;
+  }
 }
 
 @media (min-width: 64em) {
